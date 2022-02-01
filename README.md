@@ -1,2 +1,2 @@
 # potager-metier
-Domaine
+Domaine de l'application potager2
