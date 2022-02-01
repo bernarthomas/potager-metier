@@ -1,5 +1,16 @@
 {
+  "name": "bernarthomas/potager-metier",
+  "description": "Fournit un domaine pour implémenter potager2",
+  "type": "package",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Thomas",
+      "email": "bernarthomas@free.fr"
+    }
+  ],
+  "minimum-stability": "dev",
   "require": {
-    "php": ">=8.0"
+    "php": "^8.0"
   }
 }
