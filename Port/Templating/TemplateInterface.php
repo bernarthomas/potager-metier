@@ -1,6 +1,6 @@
 <?php
 
-namespace Bt\Port\Templating;
+namespace bt\Port\Templating;
 
 /**
  * Contrat moteur de templates
