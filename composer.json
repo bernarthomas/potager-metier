@@ -13,5 +13,10 @@
   "require": {
     "php": "^8.0",
     "phpunit/phpunit": "10.0.x-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "bt\\": "/"
+    }
   }
 }
