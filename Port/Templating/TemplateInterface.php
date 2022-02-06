@@ -9,8 +9,8 @@ interface TemplateInterface
 {
     /**
      * @param string $nomFichier
-     * @param ViewModelInterface|null $parametres
+     * @param array $parametres
      * @return string
      */
-    public function render(string $nomFichier, ViewModelInterface $parametres = null): string;
+    public function render(string $nomFichier, array $parametres = []): string;
 }
