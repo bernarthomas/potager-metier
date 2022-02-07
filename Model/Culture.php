@@ -1,6 +1,6 @@
 <?php
 
-namespace bt\Model;
+namespace Bt\Model;
 
 /**
  *
