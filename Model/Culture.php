@@ -13,9 +13,17 @@ class Culture implements DTOInterface, ParentInterface, GestionnaireInterface
     public string $libelle;
 
     /**
-     * @var
+     * @var GestionnaireInterface
      */
-    private $gestionnaire;
+    private GestionnaireInterface $gestionnaire;
+
+    /**
+     * Inialise les attributs de la classe
+     */
+    public function __construct()
+    {
+        $this->libelle = '';
+    }
 
     /**
      * @return bool
