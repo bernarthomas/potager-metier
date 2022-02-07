@@ -44,6 +44,14 @@ class Culture implements DTOInterface, ParentInterface, GestionnaireInterface
     /**
      * @return bool
      */
+    public function hydrate(): bool
+    {
+        return $this->gestionnaire->hydrate();
+    }
+
+    /**
+     * @return bool
+     */
     public function valide(): bool
     {
         return !empty($libelle);

@@ -26,4 +26,8 @@ interface ParentInterface
      * @return bool
      */
     public function valide(): bool;
+    /**
+     * @return bool
+     */
+    public function hydrate(): bool;
 }
