@@ -64,5 +64,7 @@ class Culture implements DTOInterface, ParentInterface, GestionnaireInterface
     public function setGestionnaire(GestionnaireInterface $gestionnaire): GestionnaireInterface
     {
         $this->gestionnaire = $gestionnaire;
+
+        return $this;
     }
 }
