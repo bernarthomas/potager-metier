@@ -5,7 +5,7 @@ namespace Bt\Model;
 /**
  *
  */
-class Culture implements ParentInterface, GestionnaireInterface
+class Culture implements DTOInterface, ParentInterface, GestionnaireInterface
 {
     /**
      * @var string
