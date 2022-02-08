@@ -5,11 +5,6 @@ namespace Bt\Model;
 /**
  *
  */
-interface GestionnaireInterface extends ParentInterface
+interface GestionnaireInterface
 {
-    /**
-     * @param GestionnaireInterface $gestionnaire
-     * @return GestionnaireInterface
-     */
-    public function setGestionnaire(GestionnaireInterface $gestionnaire): GestionnaireInterface;
 }

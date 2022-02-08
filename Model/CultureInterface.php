@@ -5,8 +5,15 @@ namespace Bt\Model;
 /**
  *
  */
-interface ParentInterface
+interface CultureInterface
 {
+    /**
+     * @param GestionnaireInterface $gestionnairePDO
+     *
+     * @return $this
+     */
+    public function setGestionnaireDTO(GestionnaireInterface $gestionnairePDO): self;
+
     /**
      * @return bool
      */
