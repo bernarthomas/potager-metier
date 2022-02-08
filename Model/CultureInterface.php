@@ -8,11 +8,6 @@ namespace Bt\Model;
 interface CultureInterface
 {
     /**
-     * @param array $donnees
-     */
-    public function __construct(array $donnees);
-
-    /**
      * @return bool
      */
     public function ajoute(): bool;
