@@ -8,11 +8,9 @@ namespace Bt\Model;
 interface CultureInterface
 {
     /**
-     * @param GestionnaireInterface $gestionnairePDO
-     *
-     * @return $this
+     * @param array $donnees
      */
-    public function setGestionnaireDTO(GestionnaireInterface $gestionnairePDO): self;
+    public function __construct(array $donnees);
 
     /**
      * @return bool
