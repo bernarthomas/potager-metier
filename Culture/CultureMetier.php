@@ -52,4 +52,40 @@ class CultureMetier
             }
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getLibelle(): string
+    {
+        return $this->libelle;
+    }
+
+    /**
+     * @param string $libelle
+     * @return CultureMetier
+     */
+    public function setLibelle(string $libelle): CultureMetier
+    {
+        $this->libelle = $libelle;
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOccurences(): array
+    {
+        return $this->occurences;
+    }
+
+    /**
+     * @param array $occurences
+     * @return CultureMetier
+     */
+    public function setOccurences(array $occurences): CultureMetier
+    {
+        $this->occurences = $occurences;
+        return $this;
+    }
 }
