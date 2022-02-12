@@ -2,12 +2,13 @@
 
 namespace Bt\Culture;
 
+use Bt\PotagerException;
 use Exception;
 
 /**
  * Le libellé d'une culture doit être renseigné.
  */
-class LibelleCultureVideException extends Exception
+class LibelleCultureVideException extends PotagerException
 {
     /**
      * Exception métier personnalisée
