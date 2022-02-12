@@ -18,6 +18,9 @@ class CultureMetier
     private array $occurences;
 
     /**
+     * Les règles métiers sont implémentées dans cet objet.
+     * Une violation de règle déclenche une exception métier
+     *
      * @param string $libelle
      * @param array $occurences
      *
