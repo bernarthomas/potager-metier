@@ -2,10 +2,12 @@
 
 namespace Bt\Culture;
 
+use Bt\Exception\ImmutableException;
+
 /**
  * Objet métier culture
  */
-class CultureMetier
+final class CultureMetier
 {
     /**
      * @var string Nom de la culture
@@ -16,6 +18,11 @@ class CultureMetier
      * @var array Tableau des cultures déjà existantes
      */
     private array $occurences;
+
+    /**
+     * @var bool Permet d'empàécher une nouvelle instanciation
+     */
+    private bool $dejaIntanciee = false;
 
     /**
      * Les règles métiers sont implémentées dans cet objet.
@@ -30,8 +37,12 @@ class CultureMetier
      */
     public function __construct(string $libelle, array $occurences)
     {
+        if (true === $this->dejaIntanciee) {
+            throw new ImmutableException();
+        }
         $this->libelle = $libelle;
         $this->occurences = $occurences;
+        $this->dejaIntanciee = true;
         $this->valide();
     }
 

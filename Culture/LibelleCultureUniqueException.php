@@ -2,7 +2,7 @@
 
 namespace Bt\Culture;
 
-use Bt\PotagerException;
+use Bt\Exception\PotagerException;
 
 /**
  * Le libellé d'une culture doit être unique
