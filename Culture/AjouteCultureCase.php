@@ -40,6 +40,8 @@ class AjouteCultureCase
      */
     public function ajoute()
     {
-        return $this->cultureDTO->ajoute();
+        return $this->cultureDTO
+            ->setLibelle($this->cultureMetier->getLibelle())
+            ->ajoute();
     }
 }

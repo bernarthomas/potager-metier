@@ -42,6 +42,11 @@ interface CultureDTOInterface
      */
     public function getLibelle(): string;
 
+    /**
+     * @param string $libelle
+     * @return $this
+     */
+    public function setLibelle(string $libelle): self;
 //    /**
 //     * Passe les valeurs adaptées
 //     *
