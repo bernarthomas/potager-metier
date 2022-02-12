@@ -19,7 +19,8 @@ class CultureMetier
 
     /**
      * Les règles métiers sont implémentées dans cet objet.
-     * Une violation de règle déclenche une exception métier
+     * Une violation de règle déclenche une exception métier.
+     * Cet objet est immutable
      *
      * @param string $libelle
      * @param array $occurences
@@ -65,30 +66,10 @@ class CultureMetier
     }
 
     /**
-     * @param string $libelle
-     * @return CultureMetier
-     */
-    public function setLibelle(string $libelle): CultureMetier
-    {
-        $this->libelle = $libelle;
-        return $this;
-    }
-
-    /**
      * @return array
      */
     public function getOccurences(): array
     {
         return $this->occurences;
-    }
-
-    /**
-     * @param array $occurences
-     * @return CultureMetier
-     */
-    public function setOccurences(array $occurences): CultureMetier
-    {
-        $this->occurences = $occurences;
-        return $this;
     }
 }
