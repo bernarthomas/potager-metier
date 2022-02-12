@@ -35,6 +35,13 @@ interface CultureDTOInterface
      */
     public function collecte(): array;
 
+    /**
+     * Accesseur libellé Culture
+     *
+     * @return string
+     */
+    public function getLibelle(): string;
+
 //    /**
 //     * Passe les valeurs adaptées
 //     *
