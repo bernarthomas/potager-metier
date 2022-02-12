@@ -9,8 +9,8 @@ use Exception;
  */
 class PotagerException extends Exception
 {
-    public function __construct()
+    public function __construct($message)
     {
-        parent::__construct('Une erreur s\'est produite.');
+        parent::__construct($message ?? 'Une erreur s\'est produite.');
     }
 }
