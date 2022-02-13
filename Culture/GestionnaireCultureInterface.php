@@ -5,7 +5,7 @@ namespace Bt\Culture;
 /**
  * Contrat pour l'objet de transfert de données CRUD
  */
-interface CultureDTOInterface
+interface GestionnaireCultureInterface
 {
     /**
      * Fait l'équivalent d'un INSERT
@@ -47,10 +47,4 @@ interface CultureDTOInterface
      * @return $this
      */
     public function setLibelle(string $libelle): self;
-//    /**
-//     * Passe les valeurs adaptées
-//     *
-//     * @return bool
-//     */
-//    public function hydrate(): bool;
 }

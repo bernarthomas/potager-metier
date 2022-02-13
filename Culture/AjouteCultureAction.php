@@ -5,7 +5,7 @@ namespace Bt\Culture;
 /**
  * Cas utilisateur ajout d'une culture
  */
-class AjouteCultureCase
+class AjouteCultureAction
 {
     /**
      * L'objet responsable des transferts de données
@@ -15,22 +15,22 @@ class AjouteCultureCase
     private CultureDTOInterface $cultureDTO;
 
     /**
-     * L'objet métier garant de sa validité
+     * L'objet métier immutable et garant de sa validité
      *
-     * @var CultureMetier
+     * @var Culture
      */
-    private CultureMetier $cultureMetier;
+    private Culture $culture;
 
     /**
      * Constructeur
      *
      * @param CultureDTOInterface $cultureDTO
-     * @param CultureMetier $cultureMetier
+     * @param Culture $culture
      */
-    public function __construct(CultureDTOInterface $cultureDTO, CultureMetier $cultureMetier)
+    public function __construct(CultureDTOInterface $cultureDTO, Culture $culture)
     {
         $this->cultureDTO = $cultureDTO;
-        $this->cultureMetier = $cultureMetier;
+        $this->culture = $culture;
     }
 
     /**
@@ -38,10 +38,10 @@ class AjouteCultureCase
      *
      * @return bool
      */
-    public function ajoute()
+    public function enregistre()
     {
         return $this->cultureDTO
-            ->setLibelle($this->cultureMetier->getLibelle())
+            ->setLibelle($this->culture->getLibelle())
             ->ajoute();
     }
 }

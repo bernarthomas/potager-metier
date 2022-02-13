@@ -7,7 +7,7 @@ use Bt\Exception\ImmutableException;
 /**
  * Objet métier culture
  */
-final class CultureMetier
+final class Culture
 {
     /**
      * @var string Nom de la culture
