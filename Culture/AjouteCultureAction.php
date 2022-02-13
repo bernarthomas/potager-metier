@@ -10,9 +10,9 @@ class AjouteCultureAction
     /**
      * L'objet responsable des transferts de données
      *
-     * @var CultureDTOInterface
+     * @var GestionnaireCultureInterface
      */
-    private CultureDTOInterface $cultureDTO;
+    private GestionnaireCultureInterface $gestionnaireCulture;
 
     /**
      * L'objet métier immutable et garant de sa validité
@@ -24,12 +24,12 @@ class AjouteCultureAction
     /**
      * Constructeur
      *
-     * @param CultureDTOInterface $cultureDTO
+     * @param GestionnaireCultureInterface $gestionnaireCulture
      * @param Culture $culture
      */
-    public function __construct(CultureDTOInterface $cultureDTO, Culture $culture)
+    public function __construct(GestionnaireCultureInterface $gestionnaireCulture, Culture $culture)
     {
-        $this->cultureDTO = $cultureDTO;
+        $this->gestionnaireCulture = $gestionnaireCulture;
         $this->culture = $culture;
     }
 
@@ -40,7 +40,7 @@ class AjouteCultureAction
      */
     public function enregistre()
     {
-        return $this->cultureDTO
+        return $this->gestionnaireCulture
             ->setLibelle($this->culture->getLibelle())
             ->ajoute();
     }

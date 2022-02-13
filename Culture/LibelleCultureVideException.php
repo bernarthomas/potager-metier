@@ -3,7 +3,6 @@
 namespace Bt\Culture;
 
 use Bt\Exception\PotagerException;
-use Exception;
 
 /**
  * Le libellé d'une culture doit être renseigné.
