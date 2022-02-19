@@ -20,7 +20,7 @@ final class Culture implements CultureInterface
     private array $occurences;
 
     /**
-     * @var bool Permet d'empàécher une nouvelle instanciation
+     * @var bool Permet d'empécher une nouvelle instanciation
      */
     private bool $dejaIntanciee = false;
 
