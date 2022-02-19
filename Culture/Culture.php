@@ -7,7 +7,7 @@ use Bt\Exception\ImmutableException;
 /**
  * Objet métier culture
  */
-final class Culture
+final class Culture implements CultureInterface
 {
     /**
      * @var string Nom de la culture
