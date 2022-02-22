@@ -14,6 +14,6 @@ class LibelleCultureUniqueException extends PotagerException
      */
     public function __construct()
     {
-        parent::__construct('Le libellé d\'une culture doit être unique.');
+        parent::__construct('Une culture doit être unique.');
     }
 }
