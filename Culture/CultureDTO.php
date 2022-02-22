@@ -1,6 +1,6 @@
 <?php
 
-namespace bt\Culture;
+namespace Bt\Culture;
 
 /**
  * Objet Culture id, libelle
