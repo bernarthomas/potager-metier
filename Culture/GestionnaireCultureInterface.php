@@ -36,6 +36,21 @@ interface GestionnaireCultureInterface
     public function collecte(): array;
 
     /**
+     * Accesseur identifiant unique Culture
+     *
+     * @return int
+     */
+    public function getId(): int;
+
+    /**
+     * Mutateur identifiant unique Culture
+     *
+     * @param string $libelle
+     * @return $this
+     */
+    public function setId(int $id): self;
+
+    /**
      * Accesseur libellé Culture
      *
      * @return string
@@ -43,6 +58,8 @@ interface GestionnaireCultureInterface
     public function getLibelle(): string;
 
     /**
+     * Mutateur libellé Culture
+     *
      * @param string $libelle
      * @return $this
      */
