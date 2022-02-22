@@ -10,6 +10,13 @@ use Bt\Exception\ImmutableException;
 final class Culture implements CultureInterface
 {
     /**
+     * Identifiant unique
+     *
+     * @var int
+     */
+    private int $id;
+
+    /**
      * @var string Nom de la culture
      */
     private string $libelle;
@@ -82,5 +89,26 @@ final class Culture implements CultureInterface
     public function getOccurences(): array
     {
         return $this->occurences;
+    }
+    /**
+     * Accesseur identifiant
+     *
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Mutateur modification de l'identifiant
+     *
+     * @param int $id
+     * @return Culture
+     */
+    public function setId(int $id): Culture
+    {
+        $this->id = $id;
+        return $this;
     }
 }

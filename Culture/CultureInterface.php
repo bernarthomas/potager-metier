@@ -8,6 +8,11 @@ namespace Bt\Culture;
 interface CultureInterface
 {
     /**
+     * @return int
+     */
+    public function getId(): int;
+
+    /**
      * @return string
      */
     public function getLibelle(): string;
