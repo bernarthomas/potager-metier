@@ -27,7 +27,7 @@ class ActionSupprime
      * @param Culture $culture
      * @param GestionnaireInterface $gestionnaireCulture
      */
-    public function __construct(Culture $culture, GestionnaireInterface $gestionnaireCulture, )
+    public function __construct(Culture $culture, GestionnaireInterface $gestionnaireCulture)
     {
         $this->gestionnaireCulture = $gestionnaireCulture;
         $this->culture = $culture;
