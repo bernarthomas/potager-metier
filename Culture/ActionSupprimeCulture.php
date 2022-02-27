@@ -38,7 +38,7 @@ class ActionSupprimeCulture
      *
      * @return bool
      */
-    public function excecute()
+    public function excecute(): bool
     {
         return $this->gestionnaireCulture
             ->setId($this->culture->getId())

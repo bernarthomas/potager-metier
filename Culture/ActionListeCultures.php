@@ -27,7 +27,7 @@ class ActionListeCultures
      *
      * @return array
      */
-    public function excecute()
+    public function excecute(): array
     {
         return $this->gestionnaireCulture->collecte();
     }
