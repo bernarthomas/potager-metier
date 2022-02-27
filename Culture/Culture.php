@@ -52,8 +52,8 @@ final class Culture
         $this->id = $id;
         $this->libelle = $libelle;
         $this->gestionnaire = $gestionnaire;
-        $this->cultures = $this->gestionnaire->collecte();
         if (true === $valide) {
+            $this->cultures = $this->gestionnaire->collecte();
             $this->valide();
         }
     }
