@@ -38,7 +38,7 @@ class ActionAjouteCulture
      *
      * @return bool
      */
-    public function excecute(): bool
+    public function execute(): bool
     {
         return $this->gestionnaireCulture
             ->setLibelle($this->culture->getLibelle())
