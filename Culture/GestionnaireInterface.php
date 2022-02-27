@@ -19,7 +19,7 @@ interface GestionnaireInterface
      *
      * @return bool
      */
-    public function enleve(): bool;
+    public function supprime(): bool;
 
     /**
      * Fait l'équivalent d'un UPDATE
