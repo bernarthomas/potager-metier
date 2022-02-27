@@ -128,4 +128,28 @@ final class Culture
 
         return $this;
     }
+
+    /**
+     * Accesseur gestionnaire pour persistance
+     *
+     * @return GestionnaireInterface
+     */
+    public function getGestionnaire(): GestionnaireInterface
+    {
+        return $this->gestionnaire;
+    }
+
+    /**
+     * Mutateur gestionnaire pour persistance
+     *
+     * @param GestionnaireInterface $gestionnaire
+     *
+     * @return Culture
+     */
+    public function setGestionnaire(GestionnaireInterface $gestionnaire): Culture
+    {
+        $this->gestionnaire = $gestionnaire;
+
+        return $this;
+    }
 }

@@ -8,13 +8,6 @@ namespace Bt\Culture;
 class ActionAjoute
 {
     /**
-     * L'objet responsable des transferts de données
-     *
-     * @var GestionnaireInterface
-     */
-    private GestionnaireInterface $gestionnaireCulture;
-
-    /**
      * L'objet métier immutable et garant de sa validité
      *
      * @var Culture
@@ -25,11 +18,9 @@ class ActionAjoute
      * Constructeur
      *
      * @param Culture $culture
-     * @param GestionnaireInterface $gestionnaireCulture
      */
-    public function __construct(Culture $culture, GestionnaireInterface $gestionnaireCulture)
+    public function __construct(Culture $culture)
     {
-        $this->gestionnaireCulture = $gestionnaireCulture;
         $this->culture = $culture;
     }
 
@@ -40,7 +31,8 @@ class ActionAjoute
      */
     public function execute(): bool
     {
-        return $this->gestionnaireCulture
+        return $this->culture
+            ->getGestionnaire()
             ->setLibelle($this->culture->getLibelle())
             ->ajoute();
     }
