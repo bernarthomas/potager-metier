@@ -15,23 +15,29 @@ final class Culture
     private int $id;
 
     /**
-     * @var string Nom de la culture
+     * Nom de la culture
+     *
+     * @var string
      */
     private string $libelle;
 
     /**
-     * @var array Tableau des cultures déjà existantes
+     * Tableau des cultures déjà existantes
+     *
+     * @var array
      */
     private array $cultures;
 
     /**
+     * Classe chargée des traitements ajoute, supprime ...
+     *
      * @var GestionnaireInterface
      */
     private GestionnaireInterface $gestionnaire;
 
     /**
      * Les règles métiers sont implémentées dans cet objet.
-     * Une violation de règle déclenche une exception métier.
+     * Si valide est à true, une violation de règle déclenche une exception métier.
      *
      * @param string $libelle
      * @param GestionnaireInterface $gestionnaire
@@ -74,11 +80,27 @@ final class Culture
     }
 
     /**
+     * Accesseur libellé
+     *
      * @return string
      */
     public function getLibelle(): string
     {
         return $this->libelle;
+    }
+
+    /**
+     * Mutateur libellé
+     *
+     * @param string $libelle
+     *
+     * @return Culture
+     */
+    public function setLibelle(string $libelle): Culture
+    {
+        $this->libelle = $libelle;
+
+        return $this;
     }
 
     /**
@@ -92,7 +114,7 @@ final class Culture
     }
 
     /**
-     * Mutateur modification de l'identifiant
+     * Mutateur de l'identifiant
      *
      * @param int $id
      *
