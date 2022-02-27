@@ -5,7 +5,7 @@ namespace Bt\Culture;
 /**
  * Cas utilisateur ajout d'une culture
  */
-class SupprimeCultureAction
+class ActionAjouteCulture
 {
     /**
      * L'objet responsable des transferts de données
@@ -34,14 +34,14 @@ class SupprimeCultureAction
     }
 
     /**
-     * Supprime une culture en utilisant les objets injectés et conformes
+     * Ajoute une culture en utilisant les objets injectés et conformes
      *
      * @return bool
      */
-    public function enregistre()
+    public function excecute()
     {
         return $this->gestionnaireCulture
-            ->setId($this->culture->getId())
-            ->enleve();
+            ->setLibelle($this->culture->getLibelle())
+            ->ajoute();
     }
 }
