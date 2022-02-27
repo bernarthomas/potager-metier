@@ -2,12 +2,10 @@
 
 namespace Bt\Culture;
 
-use Bt\Exception\ImmutableException;
-
 /**
  * Objet métier culture
  */
-final class Culture implements CultureInterface
+final class Culture
 {
     /**
      * Identifiant unique
@@ -24,33 +22,32 @@ final class Culture implements CultureInterface
     /**
      * @var array Tableau des cultures déjà existantes
      */
-    private array $occurences;
+    private array $cultures;
 
     /**
-     * @var bool Permet d'empécher une nouvelle instanciation
+     * @var GestionnaireInterface
      */
-    private bool $dejaIntanciee = false;
+    private GestionnaireInterface $gestionnaire;
 
     /**
      * Les règles métiers sont implémentées dans cet objet.
      * Une violation de règle déclenche une exception métier.
-     * Cet objet est immutable
      *
      * @param string $libelle
-     * @param array $occurences
+     * @param GestionnaireInterface $gestionnaire
+     * @param bool $valide
      *
-     * @throws LibelleCultureUniqueException
-     * @throws LibelleCultureVideException
+     * @throws ExceptionLibelleUnique
+     * @throws ExceptionLibelleVide
      */
-    public function __construct(string $libelle, array $occurences)
+    public function __construct(string $libelle, GestionnaireInterface $gestionnaire, bool $valide = false)
     {
-        if (true === $this->dejaIntanciee) {
-            throw new ImmutableException();
-        }
         $this->libelle = $libelle;
-        $this->occurences = $occurences;
-        $this->dejaIntanciee = true;
-        $this->valide();
+        $this->gestionnaire = $gestionnaire;
+        $this->cultures = $this->gestionnaire->collecte();
+        if (true === $valide) {
+            $this->valide();
+        }
     }
 
     /**
@@ -58,21 +55,22 @@ final class Culture implements CultureInterface
      *
      * @return void
      *
-     * @throws LibelleCultureUniqueException
-     * @throws LibelleCultureVideException
+     * @throws ExceptionLibelleUnique
+     * @throws ExceptionLibelleVide
      */
     private function valide(): void
     {
         if (empty($this->libelle)) {
-            throw new LibelleCultureVideException();
+            throw new ExceptionLibelleVide();
         }
-        if (!empty($this->occurences)) {
-            foreach ($this->occurences as $culture) {
+        if (!empty($this->cultures)) {
+            foreach ($this->cultures as $culture) {
                 if ($culture->getLibelle() === $this->libelle) {
-                    throw new LibelleCultureUniqueException();
+                    throw new ExceptionLibelleUnique();
                 }
             }
         }
+        /** @todo pour suppression exception si il y a des valeurs de clés étrangères dans d'autres tables */
     }
 
     /**
@@ -83,13 +81,6 @@ final class Culture implements CultureInterface
         return $this->libelle;
     }
 
-    /**
-     * @return array
-     */
-    public function getOccurences(): array
-    {
-        return $this->occurences;
-    }
     /**
      * Accesseur identifiant
      *
@@ -104,11 +95,13 @@ final class Culture implements CultureInterface
      * Mutateur modification de l'identifiant
      *
      * @param int $id
+     *
      * @return Culture
      */
     public function setId(int $id): Culture
     {
         $this->id = $id;
+
         return $this;
     }
 }

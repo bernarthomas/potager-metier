@@ -5,14 +5,14 @@ namespace Bt\Culture;
 /**
  * Cas utilisateur ajout d'une culture
  */
-class ActionAjouteCulture
+class ActionSupprime
 {
     /**
      * L'objet responsable des transferts de données
      *
-     * @var GestionnaireCultureInterface
+     * @var GestionnaireInterface
      */
-    private GestionnaireCultureInterface $gestionnaireCulture;
+    private GestionnaireInterface $gestionnaireCulture;
 
     /**
      * L'objet métier immutable et garant de sa validité
@@ -24,24 +24,24 @@ class ActionAjouteCulture
     /**
      * Constructeur
      *
-     * @param GestionnaireCultureInterface $gestionnaireCulture
+     * @param GestionnaireInterface $gestionnaireCulture
      * @param Culture $culture
      */
-    public function __construct(GestionnaireCultureInterface $gestionnaireCulture, Culture $culture)
+    public function __construct(GestionnaireInterface $gestionnaireCulture, Culture $culture)
     {
         $this->gestionnaireCulture = $gestionnaireCulture;
         $this->culture = $culture;
     }
 
     /**
-     * Ajoute une culture en utilisant les objets injectés et conformes
+     * Supprime une culture en utilisant les objets injectés et conformes
      *
      * @return bool
      */
     public function execute(): bool
     {
         return $this->gestionnaireCulture
-            ->setLibelle($this->culture->getLibelle())
-            ->ajoute();
+            ->setId($this->culture->getId())
+            ->enleve();
     }
 }

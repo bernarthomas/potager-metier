@@ -7,7 +7,7 @@ use Bt\Exception\PotagerException;
 /**
  * Le libellé d'une culture doit être renseigné.
  */
-class LibelleCultureVideException extends PotagerException
+class ExceptionLibelleVide extends PotagerException
 {
     /**
      * Exception métier personnalisée

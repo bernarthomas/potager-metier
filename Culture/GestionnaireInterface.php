@@ -5,7 +5,7 @@ namespace Bt\Culture;
 /**
  * Contrat pour l'objet de transfert de données CRUD
  */
-interface GestionnaireCultureInterface
+interface GestionnaireInterface
 {
     /**
      * Fait l'équivalent d'un INSERT
@@ -45,7 +45,8 @@ interface GestionnaireCultureInterface
     /**
      * Mutateur identifiant unique Culture
      *
-     * @param string $libelle
+     * @param int $id
+     *
      * @return $this
      */
     public function setId(int $id): self;
@@ -61,6 +62,7 @@ interface GestionnaireCultureInterface
      * Mutateur libellé Culture
      *
      * @param string $libelle
+     *
      * @return $this
      */
     public function setLibelle(string $libelle): self;
