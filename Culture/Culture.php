@@ -10,9 +10,9 @@ final class Culture
     /**
      * Identifiant unique
      *
-     * @var int
+     * @var int|null
      */
-    private int $id;
+    private ?int $id;
 
     /**
      * Nom de la culture
@@ -39,6 +39,7 @@ final class Culture
      * Les règles métiers sont implémentées dans cet objet.
      * Si valide est à true, une violation de règle déclenche une exception métier.
      *
+     * @param int|null $id
      * @param string $libelle
      * @param GestionnaireInterface $gestionnaire
      * @param bool $valide
@@ -46,8 +47,9 @@ final class Culture
      * @throws ExceptionLibelleUnique
      * @throws ExceptionLibelleVide
      */
-    public function __construct(string $libelle, GestionnaireInterface $gestionnaire, bool $valide = false)
+    public function __construct(?int $id, string $libelle, GestionnaireInterface $gestionnaire, bool $valide = false)
     {
+        $this->id = $id;
         $this->libelle = $libelle;
         $this->gestionnaire = $gestionnaire;
         $this->cultures = $this->gestionnaire->collecte();
@@ -106,9 +108,9 @@ final class Culture
     /**
      * Accesseur identifiant
      *
-     * @return int
+     * @return int|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -116,11 +118,11 @@ final class Culture
     /**
      * Mutateur de l'identifiant
      *
-     * @param int $id
+     * @param int|null $id
      *
      * @return Culture
      */
-    public function setId(int $id): Culture
+    public function setId(?int $id): Culture
     {
         $this->id = $id;
 
